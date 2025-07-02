@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Ver Usuários</title>
+</head>
+<body>
+    <h1>Lista de Usuários</h1>
+    <table border="1">
+        <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Contato</th>
+            <th>Ações</th>
+        </tr>
+        {% for usuario in usuarios %}
+        <tr>
+            <td>{{ usuario.nome }}</td>
+            <td>{{ usuario.email }}</td>
+            <td>{{ usuario.contato }}</td>
+            <td>
+                <a href="/editar_usuario/{{ usuario.uid }}/">Editar</a> | 
+                <a href="/deletar_usuario/{{ usuario.uid }}/">Deletar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <button><a href="/">Adicionar Novo Usuário</a></button>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Editar Usuário</title>
+</head>
+<body>
+    <h1>Editar Usuário</h1>
+    <form action="/atualizar_usuario/{{ usuario.uid }}/" method="post">
+        {% csrf_token %}
+        <div>
+            <p>Nome:</p>{{ form.nome }}
+        </div>
+        <div>
+            <p>Email:</p>{{ form.email }}
+        </div>
+        <div>
+            <p>Contato:</p>{{ form.contato }}
+        </div>
+        <br>
+        <button type="submit">Atualizar</button>
+    </form>
+</body>
+</html>
