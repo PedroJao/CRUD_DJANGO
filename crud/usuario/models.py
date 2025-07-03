@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Usuario(models.Model):
-    uid = models.AutoField(primary_key=True)
+    uid = models.AutoField(primary_key=True, unique=True)
     nome = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
     contato = models.CharField(max_length=15)
