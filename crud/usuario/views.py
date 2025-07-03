@@ -10,7 +10,7 @@ def NovoUsuario(request):
             return redirect('ver_usuarios')
     else:
         form = UsuarioForm()
-    return render(request, 'home.html', {'form': form})
+    return render(request, 'novo_usuario.html', {'form': form})
 
 def VerUsuarios(request):
     usuarios = Usuario.objects.all()
